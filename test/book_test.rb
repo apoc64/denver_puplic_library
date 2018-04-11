@@ -3,29 +3,24 @@ require_relative '../lib/book'
 
 class BookTest < Minitest::Test
   def setup
-    @book = Book.new
+    @book = Book.new({author_first_name: "Harper", author_last_name: "Lee", title: "To Kill a Mockingbird", publication_date: "July 11, 1960"})
   end
 
   def test_it_exists
     assert_instance_of Book, @book
   end
-#   Iteration 1 Books
-# An existing Book class. We're going to add to the Book class so that it can respond to the following interaction pattern:
-# 
-# > require './lib/book'
-# # => true
-#
-# > book = Book.new({author_first_name: "Harper", author_last_name: "Lee", title: "To Kill a Mockingbird", publication_date: "July 11, 1960"})
-# # => #<Book:0x007f98a9c6ace8 ...>
-#
-# > book.author_first_name
-# # => "Harper"
-#
-# > book.author_last_name
-# # => "Lee"
-#
-# > book.title
-# # => "To Kill a Mockingbird"
+
+  def test_it_returns_author_first_name
+    assert_equal "Harper", @book.author_first_name
+  end
+
+  def test_it_returns_last_name
+    assert_equal "Lee", @book.author_last_name
+  end
+
+  def test_it_returns_title
+    assert_equal "To Kill a Mockingbird", @book.title
+  end
 #
 # > book.publication_date
 # # => "1960"

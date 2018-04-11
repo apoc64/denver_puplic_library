@@ -22,4 +22,13 @@ class Library
     end
   end
 
+  def find_by_author(author)
+    @books.find_all do |book|
+      name = book.author_first_name + " " + book.author_last_name
+      name == author
+    end.map do |book|
+      [book.title, book]
+    end.to_h
+  end
+
 end

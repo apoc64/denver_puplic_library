@@ -31,4 +31,12 @@ class Library
     end.to_h
   end
 
+  def find_by_publication_date(date)
+    @books.find_all do |book|
+      book.publication_date == date
+    end.map do |book|
+      [book.title, book]
+    end.to_h
+  end
+
 end

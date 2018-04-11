@@ -56,10 +56,14 @@ class LibraryTest < Minitest::Test
     expected = {"Jane Eyre" => @jane_eyre, "Villette" => @villette}
     assert_equal expected, actual
   end
-#
-# > dpl.find_by_publication_date("1960")
-# # => {
-# #     "To Kill a Mockingbird" => #<Book:0x007fb410e8e1f0 @publication_date="1960"...>
-# #    }
+
+  def test_it_can_find_by_publication_date
+    @dpl.add_to_collection(@jane_eyre)
+    @dpl.add_to_collection(@mockingbird)
+    @dpl.add_to_collection(@villette)
+    actual = @dpl.find_by_publication_date("1960")
+    expected =  {"To Kill a Mockingbird" => @mockingbird}
+    assert_equal expected, actual
+  end
 
 end

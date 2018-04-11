@@ -44,5 +44,4 @@ class Library
       [book.title, book]
     end.to_h
   end
-
 end

@@ -21,9 +21,11 @@ class BookTest < Minitest::Test
   def test_it_returns_title
     assert_equal "To Kill a Mockingbird", @book.title
   end
-#
-# > book.publication_date
-# # => "1960"
+
+  def test_it_has_pub_date
+    assert_equal "1960", @book.publication_date
+  end
+  
 # Iteration 2 Authors
 # Currently we have the beginnings of an Author class. Add to that class so that it can respond to the following interaction pattern:
 #

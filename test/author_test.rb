@@ -22,6 +22,5 @@ class AuthorTest < Minitest::Test
 
     b2 = @charlotte_bronte.add_book("Villette", "1853")
     assert_equal [b1, b2], @charlotte_bronte.books
-    publication_date="1847", @title="Villette">]
   end
 end

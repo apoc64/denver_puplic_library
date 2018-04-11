@@ -62,7 +62,15 @@ class LibraryTest < Minitest::Test
     @dpl.add_to_collection(@mockingbird)
     @dpl.add_to_collection(@villette)
     actual = @dpl.find_by_publication_date("1960")
-    expected =  {"To Kill a Mockingbird" => @mockingbird}
+    expected = {"To Kill a Mockingbird" => @mockingbird}
+    assert_equal expected, actual
+  end
+
+  def test_it_maps_books_to_hash
+    @dpl.add_to_collection(@mockingbird)
+    @dpl.add_to_collection(@villette)
+    actual = @dpl.map_books_to_hash(@dpl.books)
+    expected = {"To Kill a Mockingbird" => @mockingbird, "Villette" => @villette}
     assert_equal expected, actual
   end
 

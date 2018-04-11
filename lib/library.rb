@@ -39,4 +39,10 @@ class Library
     end.to_h
   end
 
+  def map_books_to_hash(books)
+    books.map do |book|
+      [book.title, book]
+    end.to_h
+  end
+
 end
